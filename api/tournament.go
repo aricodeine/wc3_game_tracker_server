@@ -21,7 +21,7 @@ var tournaments = []Tournament{
 	{Id: uuid.New(), Name: "League2", StartDate: time.Now(), EndDate: time.Now().AddDate(0, 0, 5)},
 }
 
-func RegisterTournamentEndpoints(router *gin.Engine) {
+func RegisterTournamentEndpoints(router *gin.RouterGroup) {
 	router.GET("/tournaments", allTournamentsHandler)
 }
 

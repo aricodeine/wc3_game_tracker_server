@@ -12,7 +12,7 @@ func main() {
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/*")
 	router.GET("/", indexHandler)
-	api.RegisterTournamentEndpoints(router)
+	api.RegisterTournamentEndpoints(router.Group("/api/v1/"))
 	err := router.Run("0.0.0.0:8080")
 
 	if err != nil {
