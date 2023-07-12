@@ -8,24 +8,11 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// type Players struct {
-// 	ID   uuid.UUID `json:"id"`
-// 	Name string    `json:"name"`
-
-// }
-
-// type Game struct {
-// 	Id      uuid.UUID `json:"id"`
-// 	Name    string    `json:"name"`
-// 	Version string    `json:"version"`
-// 	Map     string    `json:"map"`
-// }
-
 func main() {
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/*")
 	router.GET("/", indexHandler)
-	api.RegisterTournamentEndpoints(router)
+	api.RegisterTournamentEndpoints(router.Group("/api/v1/"))
 	err := router.Run("0.0.0.0:8080")
 
 	if err != nil {
