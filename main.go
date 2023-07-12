@@ -8,19 +8,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// type Players struct {
-// 	ID   uuid.UUID `json:"id"`
-// 	Name string    `json:"name"`
-
-// }
-
-// type Game struct {
-// 	Id      uuid.UUID `json:"id"`
-// 	Name    string    `json:"name"`
-// 	Version string    `json:"version"`
-// 	Map     string    `json:"map"`
-// }
-
 func main() {
 	router := gin.Default()
 	router.LoadHTMLGlob("templates/*")
